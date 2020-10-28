@@ -2,15 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import imageio
 
-m = 3160
-n = 3160
+m = 500
+n = 500
 
 s = 3000  # Scale.
 x = np.linspace(-m / s, m / s, num=m).reshape((1, m))
 y = np.linspace(-n / s, n / s, num=n).reshape((n, 1))
 Z = np.tile(x, (n, 1)) + 1j * np.tile(y, (1, m))
 
-C = np.full((n, m), -0.1 + 0.1j)
+C = np.full((n, m), 0.25 + 0.0j)
 M = np.full((n, m), True, dtype=bool)
 N = np.zeros((n, m))
 for i in range(256):
