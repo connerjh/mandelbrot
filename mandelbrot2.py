@@ -14,25 +14,24 @@ def compute_mandelbrot(n_max, threshold, nx, ny):
 
     # z = c
     z = np.zeros((nx, ny), dtype=complex)
-    M = np.full((nx, ny), True, dtype=bool)
-    N = np.zeros((nx, ny))
+    m = np.full((nx, ny), True, dtype=bool)
+    n = np.zeros((nx, ny))
 
     for j in range(n_max):
-        z[M] = z[M] * z[M] + c[M]
-        M[np.abs(z) > threshold] = False
-        N[M] = j
+        z[m] = z[m] * z[m] + c[m]
+        m[np.abs(z) > threshold] = False
+        n[m] = j
 
-    return N
+    return n
 
 
-mb_set = compute_mandelbrot(50, 2., 3000, 3000)
+mb_set = compute_mandelbrot(50, 2., 10000, 10000)
 
 fig = plt.figure()
-fig.set_size_inches(10, 10)
+fig.set_size_inches(30, 30)
 ax = fig.add_axes([0, 0, 1, 1], frameon=False, aspect=1)
 ax.set_xticks([])
 ax.set_yticks([])
 plt.imshow(np.rot90(mb_set), cmap='hot')
 plt.savefig('mandelbrot.png')
 plt.close()
-
