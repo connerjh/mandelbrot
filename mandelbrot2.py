@@ -7,8 +7,8 @@ def compute_mandelbrot(n_max, threshold, nx, ny):
     # A grid of c-values
     # x = np.linspace(-2, 1, nx)
     # y = np.linspace(-1.5, 1.5, ny)
-    x = np.linspace(0.2, 1, nx)
-    y = np.linspace(-0.5, 0.5, ny)
+    x = np.linspace(0.245, 0.255, nx)
+    y = np.linspace(-0.05, 0.05, ny)
 
     c = x[:, newaxis] + 1j*y[newaxis, :]
 
